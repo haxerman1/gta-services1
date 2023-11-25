@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Login Page</title>
     <style>
         body {
             background-color: #000; /* Black background color */
