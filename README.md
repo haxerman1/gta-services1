@@ -75,31 +75,32 @@
     </div>
 
     <script>
-        function validateForm() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            if (username === 'Admin_10059' && password === 'Adminlogin12583') {
-                document.getElementById('loginPage').classList.add('hidden');
-                document.getElementById('loggedInPage').classList.remove('hidden');
-                return false; // Prevent form submission
-            } else {
-                alert('Invalid username or password');
-                return false; // Prevent form submission
-            }
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (username === 'Admin_10059' && password === 'Adminlogin12583') {
+            document.getElementById('loginPage').classList.add('hidden');
+            document.getElementById('loggedInPage').classList.remove('hidden');
+            return false; // Prevent form submission
+        } else {
+            alert('Invalid username or password');
+            document.getElementById('username').value = ''; // Clear the username field
+            return false; // Prevent form submission
         }
+    }
 
-        function showIP() {
-            var ipDiv = document.createElement('div');
-            fetch('https://api.ipify.org/?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    ipDiv.innerHTML = '<h2>Your IP: ' + data.ip + '</h2>';
-                })
-                .catch(error => {
-                    ipDiv.innerHTML = '<h2>Failed to fetch IP</h2>';
-                });
-            document.getElementById('loggedInPage').appendChild(ipDiv);
-        }
-    </script>
+    function showIP() {
+        var ipDiv = document.createElement('div');
+        fetch('https://api.ipify.org/?format=json')
+            .then(response => response.json())
+            .then(data => {
+                ipDiv.innerHTML = '<h2>Your IP: ' + data.ip + '</h2>';
+            })
+            .catch(error => {
+                ipDiv.innerHTML = '<h2>Failed to fetch IP</h2>';
+            });
+        document.getElementById('loggedInPage').appendChild(ipDiv);
+    }
+</script>
 </body>
 </html>
