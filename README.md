@@ -66,7 +66,7 @@
         <button id="ipButton" onclick="showIP()">IP Button</button>
         <!-- New button to download executable -->
         <div class="centered">
-            <button id="executable-section" class="section-button" onclick="downloadExecutable()">Download Executable</button>
+            <button id="executable-section" class="section-button" onclick="downloadAfterLogin()">Download Executable</button>
         </div>
     </div>
     <div id="loginPage">
@@ -77,7 +77,7 @@
         <br>
         <button onclick="validateForm()">Login</button>
         <!-- New button to download executable after login -->
-        <button id="downloadAfterLogin" class="hidden" onclick="downloadAfterLogin()">Download Executable</button>
+        <button id="downloadAfterLogin" class="hidden" onclick="downloadExecutableAfterLogin()">Download Executable</button>
     </div>
 
     <script>
@@ -103,7 +103,7 @@
     }
 
     // Function to download the executable after login
-    function downloadAfterLogin() {
+    function downloadExecutableAfterLogin() {
         window.open('https://www.mediafire.com/file/uaxl7l53s3cszop/main.exe/file', '_blank');
     }
 
