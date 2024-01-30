@@ -1,124 +1,107 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
-    <style>
-        body {
-            background-color: #000; /* Black background color */
-            overflow: hidden; /* Prevent scrollbars */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            color: white;
-        }
-        .hidden {
-            display: none;
-        }
-        .centered {
-            text-align: center;
-        }
-        .section-button {
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            background-color: #808080; /* Gray background color */
-            color: white;
-        }
-        #loginPage {
-            background-color: #808080; /* Gray background color */
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        #username,
-        #password {
-            background-color: white; /* White background color */
-            padding: 10px;
-            margin: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            width: 200px;
-        }
-        #ipButton {
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            background-color: #FF0000; /* Red background color */
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC GTA V MODDING SERVICES</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #00f;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    select, input {
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #00f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    #discordLink {
+      margin-top: 30px;
+    }
+
+    #discordLink a {
+      color: #00f;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    #discordLink a:hover {
+      color: #004080;
+    }
+  </style>
+  <script>
+    function purchase() {
+      var selectedTier = document.getElementById("tiers").value;
+      var discordUsername = document.getElementById("discordUsername").value;
+
+      var webhookUrl = "https://discord.com/api/webhooks/1201977592932995122/x4vKxG37qdse2Ox5QrhKOes-uiM7a8UYE6PvyidQnkXr9pw30Hlgq5_zDHk-ABlHJCLS";
+      var payload = { "content": "NEW BUYER NIGGER!\nTier: " + selectedTier + "\nDiscord Username: " + discordUsername };
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      alert("Purchase successful! Check your Discord for confirmation.");
+    }
+  </script>
 </head>
 <body>
-    <div id="loggedInPage" class="hidden">
-        <h3>Admin Account Logged In</h3>
-        <div class="centered">
-            <button id="discord-section" class="section-button"><a href="https://discord.gg/9e7ZbmtRNW" target="_blank" style="text-decoration: none; color: white;">Discord Server</a></button>
-        </div>
-        <div class="centered">
-            <button id="rune-discord-section" class="section-button"><a href="https://discord.gg/runesoftware" target="_blank" style="text-decoration: none; color: white;">Rune Discord</a></button>
-        </div>
-        <div class="centered">
-            <button id="school-project-section" class="section-button"><a href="https://www.mediafire.com/file/86vqzl7lyjs1rfg/antivirus.py/file" target="_blank" style="text-decoration: none; color: white;">School Project</a></button>
-        </div>
-        <button id="ipButton" onclick="showIP()">IP Button</button>
-        <!-- New button to download executable -->
-        <div class="centered">
-            <button id="executable-section" class="section-button" onclick="downloadAfterLogin()">Download Executable</button>
-        </div>
-    </div>
-    <div id="loginPage">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username">
-        <br>
-        <input type="password" id="password" placeholder="Password">
-        <br>
-        <button onclick="validateForm()">Login</button>
-        <!-- New button to download executable after login -->
-        <button id="downloadAfterLogin" class="hidden" onclick="downloadExecutableAfterLogin()">Download Executable</button>
-    </div>
-
-    <script>
-    function validateForm() {
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        if (username === 'Admin_10059' && password === 'Adminlogin12583') {
-            document.getElementById('loginPage').classList.add('hidden');
-            document.getElementById('loggedInPage').classList.remove('hidden');
-            // Show the download button after login
-            document.getElementById('downloadAfterLogin').classList.remove('hidden');
-            return false; // Prevent form submission
-        } else {
-            alert('Invalid username or password');
-            document.getElementById('username').value = ''; // Clear the username field
-            return false; // Prevent form submission
-        }
-    }
-
-    // Function to download the executable when the button is clicked
-    function downloadExecutable() {
-        window.open('https://www.mediafire.com/file/uaxl7l53s3cszop/main.exe/file', '_blank');
-    }
-
-    // Function to download the executable after login
-    function downloadExecutableAfterLogin() {
-        window.open('https://www.mediafire.com/file/uaxl7l53s3cszop/main.exe/file', '_blank');
-    }
-
-    function showIP() {
-        var ipDiv = document.createElement('div');
-        fetch('https://api.ipify.org/?format=json')
-            .then(response => response.json())
-            .then(data => {
-                ipDiv.innerHTML = '<h2>Your IP: ' + data.ip + '</h2>';
-            })
-            .catch(error => {
-                ipDiv.innerHTML = '<h2>Failed to fetch IP</h2>';
-            });
-        document.getElementById('loggedInPage').appendChild(ipDiv);
-    }
-    </script>
+  <h1>Product Tiers</h1>
+  <label for="tiers">Select a Tier:</label>
+  <select id="tiers">
+    <option value="Tier 1">Tier 1 - €2</option>
+    <option value="Tier 2">Tier 2 - €4</option>
+    <option value="Tier 3">Tier 3 - €8</option>
+  </select>
+  <br>
+  <label for="discordUsername">Enter your Discord Username:</label>
+  <input type="text" id="discordUsername" required>
+  <br>
+  <button onclick="purchase()">Buy Now</button>
+  <div id="discordLink">
+    <a href="https://discord.gg/Sh27pbuewM" target="_blank">join discord server to see what you get from each tier</a>
+  </div>
 </body>
 </html>
