@@ -91,7 +91,8 @@
         discountPercentage = couponDiscounts[couponCode];
         discountCoupon = couponCode;
 
-        var discountedPrice = (parseInt(selectedTier.split('€')[1]) * (100 - discountPercentage)) / 100;
+        var tierPrice = parseFloat(selectedTier.split('€')[1]);
+        var discountedPrice = (tierPrice * (100 - discountPercentage)) / 100;
         alert("Coupon applied! You get a " + discountPercentage + "% discount. Your discounted price: €" + discountedPrice.toFixed(2));
 
         // Update payload with discounted price and coupon information
