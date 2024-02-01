@@ -6,7 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veni's Money Van</title>
   <style>
-    /* Your existing styles remain unchanged */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #00f;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    select,
+    input {
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #00f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    #discordLink {
+      margin-top: 30px;
+    }
+
+    #discordLink a {
+      color: #00f;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    #discordLink a:hover {
+      color: #004080;
+    }
   </style>
   <script>
     function purchase() {
@@ -35,12 +96,12 @@
 
         // Update payload with discounted price and coupon information
         var payload = {
-          "content": "NEW BUYER N****R!\nTier: " + selectedTier + "\nDiscord Username: " + discordUsername + "\nDiscounted Price: €" + discountedPrice.toFixed(2) + "\nCoupon Used: " + discountCoupon
+          "content": "NEW BUYER NIGGERS! @EVERYONE\nTier: " + selectedTier + "\nDiscord Username: " + discordUsername + "\nDiscounted Price: €" + discountedPrice.toFixed(2) + "\nCoupon Used: " + discountCoupon
         };
       } else {
         // No discount applied
         var payload = {
-          "content": "NEW BUYER N****R!\nTier: " + selectedTier + "\nDiscord Username: " + discordUsername + "\nCoupon Used: " + discountCoupon
+          "content": "NEW BUYER NIGGERS! @EVERYONE\nTier: " + selectedTier + "\nDiscord Username: " + discordUsername + "\nCoupon Used: " + discountCoupon
         };
       }
 
